@@ -1,0 +1,87 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="@Model.Name"></label>
+                        <input asp-for="@Model.Name" class="form-control">
+                        <span asp-validation-for="@Model.Name" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Photo"></label>
+                        <input asp-for="@Model.Photo" class="form-control">
+                        <span asp-validation-for="@Model.Photo" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Description"></label>
+                        <input asp-for="@Model.Description" class="form-control">
+                        <span asp-validation-for="@Model.Description" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.AboutCourse"></label>
+                        <input asp-for="@Model.CourseDetails.AboutCourse" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.AboutCourse" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.HowToApply"></label>
+                        <input asp-for="@Model.CourseDetails.HowToApply" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.HowToApply" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.Assesments"></label>
+                        <input asp-for="@Model.CourseDetails.Assesments" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Assesments" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.Certification"></label>
+                        <input asp-for="@Model.CourseDetails.Certification" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Certification" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.ClassDuration"></label>
+                        <input asp-for="@Model.CourseDetails.ClassDuration" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.ClassDuration" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.CourseFee"></label>
+                        <input asp-for="@Model.CourseDetails.CourseFee" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Course" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.Duration"></label>
+                        <input asp-for="@Model.CourseDetails.Duration" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Duration" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.Language"></label>
+                        <input asp-for="@Model.CourseDetails.Language" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Language" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.SkillLevels"></label>
+                        <input asp-for="@Model.CourseDetails.SkillLevels" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.SkillLevels" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.Starts"></label>
+                        <input asp-for="@Model.CourseDetails.Starts" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Starts" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.CourseDetails.Students"></label>
+                        <input asp-for="@Model.CourseDetails.Students" class="form-control">
+                        <span asp-validation-for="@Model.CourseDetails.Students" class="form-text text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a asp-action="Index" class="btn btn-primary">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

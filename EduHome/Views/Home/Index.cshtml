@@ -1,0 +1,260 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Background Area Start -->
+<section id="slider-container" class="slider-area three">
+    <div class="slider-owl owl-theme owl-carousel">
+        @foreach (Slider slider in Model.Sliders)
+        {
+            <!-- Start Slingle Slide -->
+            <div class="single-slide item" style="background-image: url(../img/slider/@slider.ImageUrl)">
+                <!-- Start Slider Content -->
+                <div class="slider-content-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="slide-content-wrapper">
+                                    <div class="slide-content">
+                                        <h3>@slider.Title </h3>
+                                        <h2>@slider.SubTitle</h2>
+                                        <p>@slider.Description</p>
+                                        <a class="default-btn" asp-controller="About" asp-action="Index">Learn more</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Slider Content -->
+            </div>
+            <!-- End Slingle Slide -->
+            <!-- Start Slingle Slide -->
+        }
+    </div>
+</section>
+<!-- Background Area End -->
+<!-- Courses Area Start -->
+<div class="courses-area pt-150 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <img src="~/img/icon/section.png" alt="section-title">
+                    <h2>COURSES WE OFFER</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (Course course in Model.Courses)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a asp-controller="Courses" asp-action="Detail" asp-route-id="@course.ID">
+                                <img src="~/img/course/@course.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a asp-controller="Courses" asp-action="Detail">@course.Name</a></h3>
+                            <p>@course.Description</p>
+                            <a class="default-btn" asp-controller="Courses" asp-action="Detail">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<!-- Courses Area End -->
+<!-- Notice Start -->
+<section class="notice-area two three pt-140 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="notice-right-wrapper mb-25 pb-25">
+                    <h3>TAKE A VIDEO TOUR</h3>
+                    <div class="notice-video">
+                        <div class="video-icon video-hover">
+                            <a class="video-popup" href="https://www.youtube.com/watch?v=to6Ghf8UL7o">
+                                <i class="zmdi zmdi-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="notice-left-wrapper">
+                    <h3>notice board</h3>
+                    <div class="notice-left">
+                        <div class="single-notice-left mb-23 pb-20">
+                            <h4>5, June 2017</h4>
+                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        </div>
+                        <div class="single-notice-left hidden-sm mb-23 pb-20">
+                            <h4>4, June 2017</h4>
+                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        </div>
+                        <div class="single-notice-left pb-70">
+                            <h4>3, June 2017</h4>
+                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        </div>
+                        <div class="single-notice-left mb-23 pb-20">
+                            <h4>5, June 2017</h4>
+                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        </div>
+                        <div class="single-notice-left hidden-sm mb-23 pb-20">
+                            <h4>4, June 2017</h4>
+                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        </div>
+                        <div class="single-notice-left pb-70">
+                            <h4>3, June 2017</h4>
+                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Notice End -->
+<!-- About Start -->
+<div class="about-area pb-135 pt-130 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="about-content">
+                    <h2>@Html.Raw(@Model.About.Title)</h2>
+                    <p>@Model.About.Description</p>
+                    <a class="default-btn" href="about.html">buy now</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="about-img">
+                    <img src="~/img/about/@Model.About.Photo" alt="about">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!-- Event Area Start -->
+<div class="event-area three text-center pt-100 pb-115">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <img src="~/img/icon/section.png" alt="section-title">
+                    <h2>UPCOMMING EVENTS</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (Event evnt in Model.Events)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-event mb-35">
+                        <div class="event-img">
+                            <a asp-controller="Event" asp-action="Detail" asp-route-id="@evnt.ID">
+                                <img src="~/img/event/@evnt.Photo" alt="event">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                            <div class="event-date">
+                                <h3><span> @evnt.DateTime</span></h3>
+                            </div>
+                        </div>
+                        <div class="event-content text-left">
+                            <h4><a asp-controller="Event" asp-action="Detail">ADVANCE PHP WORKSHOP</a></h4>
+                            <ul>
+                                <li><span>time:</span>@evnt.StartTime - @evnt.EndTime</li>
+                                <li><span>venue</span>@evnt.Venue</li>
+                            </ul>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-controller="Event" asp-action="Detail">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<!-- Event Area End -->
+<!-- Blog Area Start -->
+@foreach (Blog blog in Model.Blogs)
+{
+    <div class="blog-area pt-150 pb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title text-center">
+                        <img src="~/img/icon/section.png" alt="section-title">
+                        <h2>LATEST FROM BLOG</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-img">
+                            <a asp-controller="Blog" asp-action="Index"><img src="~/img/blog/@blog.Photo" alt="blog"></a>
+                            <div class="blog-hover">
+                                <a asp-controller="Blog" asp-action="Index"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-top">
+                                <p>@blog.Name  /  @blog.DateTime  /  <i class="fa fa-comments-o"></i> @blog.IconComment</p>
+                            </div>
+                            <div class="blog-bottom">
+                                <h2><a asp-controller="Blog" asp-action="Index"> @blog.Title </a></h2>
+                                <a asp-controller="Blog" asp-action="Index">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<!-- Blog Area End -->
+<!-- Subscribe Start -->
+<div class="subscribe-area pt-60 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="subscribe-content section-title text-center">
+                    <h2>subscribe our newsletter</h2>
+                    <p>I must explain to you how all this mistaken idea </p>
+                </div>
+                <div class="newsletter-form mc_embed_signup">
+                    <form action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll" class="mc-form">
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your e-mail address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
+                            <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe"><span>subscribe</span></button>
+                        </div>
+                    </form>
+                    <!-- mailchimp-alerts Start -->
+                    <div class="mailchimp-alerts">
+                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                        <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                        <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                    </div>
+                    <!-- mailchimp-alerts end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Subscribe End -->
