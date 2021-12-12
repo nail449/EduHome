@@ -20,7 +20,7 @@ namespace EduHome.Areas.Admin.Controllers
 
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;
-
+        
         public CourseController(AppDbContext db,        
                                 IWebHostEnvironment env)
         {
